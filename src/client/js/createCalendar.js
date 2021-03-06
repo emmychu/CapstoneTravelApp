@@ -1,0 +1,1 @@
+// Should prepopulate the body of the document to a calendar with the duration of the trip

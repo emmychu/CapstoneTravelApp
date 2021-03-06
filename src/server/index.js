@@ -5,7 +5,7 @@ var cors = require('cors')
 
 const app = express()
 app.use(cors())
-app.listen(bodyParser.json())
+app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({
     extended: true
 }))

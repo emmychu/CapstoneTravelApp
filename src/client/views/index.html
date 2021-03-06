@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <title>Adventure Awaits!</title>
+        <meta charset="UTF-8">
+    </head>
+    <body class = "container">
+        <div id = "step-1" class = "info">
+            <header>
+                <h1>Adventure waits for No one!</h1>
+            </header>
+            <div id = "info-submit">
+                <div class ="questions">Where are you going?: <input type = "text" id = "first-destination"></div>
+                <div class ="questions">When are you leaving?: <input type = "date" id = "depart-date"><br></div>
+                <div class ="questions">For how long?: <input type = "number" id = "duration"><br></div>
+                <div class ="questions">Multiple destinations?: <input type ="checkbox"><br></div>
+                <input id = "submit-button" type ="submit">
+            </div>
+            <footer>
+                hello i am footer
+            </footer>
+        </div>
+        <div id ="step-2" class = "info">
+            <header>
+                <h1 id = "destination">Insert Destination Here</h1>
+                <!-- Background should reflect initial city -->
+            </header>
+            <div id = "calendar">
+                <!-- number of boxes that reflect total days will appear here with weather icon, should have optimization to add events/ideas to itinerary, box should grow accordingly -->
+                <!-- Need box to click if going to different city (Only if they checked multiple city box), if clicked, will change color to following boxes and make new call to api to get updated weather data. Footer background updates to last location image? -->
+            </div>
+            <footer>
+                hello i am footer
+                <!-- Should have button to return to the beginning -->
+            </footer>
+        </div>
+    </body>
+</html>

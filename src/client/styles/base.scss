@@ -1,0 +1,29 @@
+body{
+    background-color: rgb(255, 226, 231);
+    display: grid;
+    grid-template-areas:
+    "head"
+    "info"
+    "foot";
+    justify-content: center;
+
+    h1{
+       background-color: rgba(55, 63, 138, 0.678);
+       border-top-left-radius: 10px;
+       border-top-right-radius: 10px;
+       padding:20px; 
+       font-size: 70px; 
+       grid-area: head;
+    }
+
+    .info{
+        grid-area: info;
+        #submit-button{
+            max-width: 100px;
+        }
+    }
+
+    footer{
+        grid-area: foot;
+    }
+}

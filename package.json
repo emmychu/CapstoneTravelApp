@@ -6,7 +6,7 @@
         "test": "echo \"Error: no test specified\" && exit 1",
         "start": "node src/server/index.js",
         "build-prod": "webpack --config webpack.prod.js",
-        "build-dev": "webpack-dev-server --config webpack.dev.js --open"
+        "build-dev": "webpack serve --config webpack.dev.js --open"
     },
     "devDependencies": {
         "@babel/core": "^7.13.8",
@@ -21,9 +21,11 @@
         "sass-loader": "^11.0.1",
         "style-loader": "^2.0.0",
         "terser-webpack-plugin": "^5.1.1",
-        "webpack": "^5.24.3"
+        "webpack": "^5.24.3",
+        "webpack-cli": "^4.5.0",
+        "webpack-dev-server": "^3.11.2"
     },
     "dependencies": {
-        "webpack-cli": "^4.5.0"
+        "cors": "^2.8.5"
     }
 }

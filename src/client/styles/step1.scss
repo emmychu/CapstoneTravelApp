@@ -1,0 +1,23 @@
+#step-1{
+    display: flex;
+    flex-direction: column;
+    max-width: 1000px;
+    align-items: center;
+    
+    #info-submit{
+        display:flex;
+        flex-direction: column;
+        padding: 20px;
+        margin: 30px;
+        min-width: 500px;
+        align-items: center;
+        background-color: snow;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px 0 rgb(175, 142, 147);
+    }
+
+    .questions{
+        padding: 10px;
+    }
+
+}
