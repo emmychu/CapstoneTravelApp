@@ -1,3 +1,12 @@
 #step-2{
     display:none;
+    flex-direction: column;
+    max-width: 1000px;
+    align-items: center;
+
+    #calendar{
+        border: navy;
+        border-width: 2px;
+        border-style: solid;
+    }
 }
