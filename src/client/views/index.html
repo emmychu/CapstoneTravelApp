@@ -10,11 +10,13 @@
                 <h1>Adventure waits for No one!</h1>
             </header>
             <div id = "info-submit">
-                <div class ="questions">Where are you going?: <input type = "text" id = "first-destination"></div>
-                <div class ="questions">When are you leaving?: <input type = "date" id = "depart-date"><br></div>
-                <div class ="questions">When are you returning?: <input type = "date" id = "return-date"><br></div>
-                <div class ="questions">Multiple destinations?: <input type ="checkbox" id ="multicity"><br></div>
-                <input id = "submit-button" type ="submit">
+                <form onsubmit = "return Client.updateUI(event)">
+                    <div class ="questions">Where are you going?: <input type = "text" id = "first-destination"></div>
+                    <div class ="questions">When are you leaving?: <input type = "date" id = "depart-date"><br></div>
+                    <div class ="questions">When are you returning?: <input type = "date" id = "return-date"><br></div>
+                    <div class ="questions">Multiple destinations?: <input type ="checkbox" id ="multicity"><br></div>
+                    <input id = "submit-button" type ="submit" onsubmit = "return Client.updateUI(event)">
+                </form>
             </div>
             <footer>
                 hello i am footer
