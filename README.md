@@ -6,7 +6,7 @@
 * `npm i cors`
 * `npm i body-parser`
 * `npm install -D webpack`
-* `npm install webpack-dev-server --save-dev`
+* `npm i -D webpack-dev-server@4.0.0-beta.2`
 * `npm install --save-dev webpack-cli`
 * `npm i -D @babel/core @babel/preset-env babel-loader`
 * `npm i -D style-loader node-sass css-loader sass-loader`

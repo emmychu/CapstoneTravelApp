@@ -13,8 +13,8 @@ app.use(bodyParser.urlencoded({
 app.use(express.static('dist'))
 console.log(__dirname)
 
-app.get('/', (request,response) => {
-    response.sendFile(path.resolve('src/client/views/index.html'))
+app.get('/', (request,res) => {
+    res.sendFile(path.resolve('src/client/views/index.html'))
 })
 
 app.listen(8090, () => {
