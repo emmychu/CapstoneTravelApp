@@ -1,4 +1,4 @@
-import { dateArray } from './dateArray'
+import { dateObject } from './dateConvert'
 
 function submitForm(event) {
     event.preventDefault()
@@ -11,37 +11,38 @@ function submitForm(event) {
     else{
         departDate = document.getElementById("depart-date").value
         returnDate = document.getElementById("return-date").value
-        let departArray = dateArray(departDate)
-        let returnArray = dateArray(returnDate)
-        let departMonth = departArray[0]
-        let departDay = departArray[1]
-        let departYear = departArray[2]
-        let returnMonth = returnArray[0]
-        let returnDay = returnArray[1]
-        let returnYear = returnArray[2]
-        if(returnYear >= departYear){
-            if(returnYear > departYear){
+        let departObject = dateObject(departDate)
+        let returnObject = dateObject(returnDate)
+        if(returnObject.year >= departObject.year){
+            if(returnObject.year > departObject.year){
+                if(document.getElementById("multicity").checked){
+                    multiCity = true;
+                    uiUpdate(destination, multiCity, departObject, returnObject)
+                }
                 //return month and day all valid
             }else{ //return year = depart year
-                if(returnMonth < departMonth){
+                if(returnObject.month < departObject.month){
                     alert("Please input valid dates! Thank you!")
                 }else{
-                    if(returnMonth === departMonth && returnDay >= departDay){
+                    if(returnObject.month === departObject.month && returnObject.day >= departObject.day){
                         //CAN PROCEED
-                    }else if(returnMonth > departMonth){
+                        if(document.getElementById("multicity").checked){
+                            multiCity = true;
+                            uiUpdate(destination, multiCity, departObject, returnObject)
+                        }
+                    }else if(returnObject.month > departObject.month){
                         //CAN PROCEED
+                        if(document.getElementById("multicity").checked){
+                            multiCity = true;
+                            uiUpdate(destination, multiCity, departObject, returnObject)
+                        }
                     }
                 }
             }
         }else{ //return year is less than depart year
             alert("Please input valid dates! Thank you!")
         }
-        // let duration = (returnDate.getTime() - departDate.getTime)/(1000 * 60 * 60 *24)
-        if(document.getElementById("multicity").checked){
-            multiCity = true;
-        }
     }
-
 };
 
 export { submitForm }

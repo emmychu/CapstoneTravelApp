@@ -2,7 +2,7 @@ import { submitForm } from './js/formSubmit'
 import {uiUpdate} from './js/changeUI'
 import {createCalendar} from './js/createCalendar'
 import { hello } from './js/dataCall'
-import { dateArray } from './js/dateArray'
+import { dateObject } from './js/dateArray'
 
 import './styles/base.scss'
 import './styles/step1.scss'
@@ -14,7 +14,7 @@ console.log("I am a jerk");
 
 export {
     submitForm,
-    dateArray,
+    dateObject,
     uiUpdate,
     createCalendar,
     dateCall
