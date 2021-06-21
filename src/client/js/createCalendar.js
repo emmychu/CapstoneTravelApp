@@ -1,10 +1,10 @@
-// Should prepopulate the body of the document to a calendar with the duration of the trip
-let month = 
+// Should change the body of the document to a calendar with the duration of the trip
 
-function calendarCreate(duration,multi,departMonth, returnMonth){
+function calendarCreate(duration,multi,departDate, returnDate){
     let calendar = document.getElementById("calendar")
     calendar.style.gridTemplateColumns = 7
     calendar.style.gridTemplateRows = 5
+    //want to do data call to API through server to get information
     if(multi){
         if(duration < 7){
             calendar.style.gridTemplateColumns = duration
