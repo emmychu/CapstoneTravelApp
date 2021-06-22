@@ -2,8 +2,6 @@
 
 function calendarCreate(duration,multi,departDate, returnDate){
     let calendar = document.getElementById("calendar")
-    calendar.style.gridTemplateColumns = 7
-    calendar.style.gridTemplateRows = 5
     //want to do data call to API through server to get information
     if(multi){
         if(duration < 7){
