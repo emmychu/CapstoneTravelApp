@@ -1,13 +1,32 @@
 #step-2{
     display:none;
     flex-direction: column;
-    max-width: 1000px;
     align-items: center;
 
     #calendar{
-        border: navy;
-        border-width: 2px;
-        border-style: solid;
-        background-color: white;
+        table{
+            border-collapse: collapse;
+            border-style: solid;
+            width:100%;
+            min-width:400px;
+            min-height: 400px;
+        }
+        td,th{
+            border: 1px solid navy;
+            padding: 10px;
+            background-color: white;
+        }
+
+        #day-header{
+            font-weight:bold;
+            text-align:center;
+        }
+        
+        td{
+            vertical-align: top;
+            text-align:left;
+            min-width: 100px;
+            min-height:500px;
+        }
     }
 }

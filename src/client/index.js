@@ -18,7 +18,6 @@ export {
     dateCheck,
     uiUpdate,
     createCalendar,
-    getDay,
     // dateCall
 }
 
