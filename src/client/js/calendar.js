@@ -1,16 +1,16 @@
 // Should change the body of the document to a calendar with the duration of the trip
 
-function calendarCreate(position,year, month){
+function calendarCreate(year, month){
     let mon = month -1
     let date = new Date(year,mon)
-    let table = `<table><th id = "day-header">SUN</th><th>MON</th><th>TUE</th><th>WED</th><th>THU</th><th>FRI</th><th>SAT</th></tr><tr>`
+    let table = `<table id = "${month}-${year}"><th id = "day-header">SUN</th><th>MON</th><th>TUE</th><th>WED</th><th>THU</th><th>FRI</th><th>SAT</th></tr><tr>`
 
     for(let i = 0; i < date.getDay(); i++){
         table += '<td></td>'
     }
 
     while(date.getMonth() == mon){
-        table += '<td>' + date.getDate() + '</td>'
+        table += `<td id="${month}-${date.getDate()}">` + date.getDate() + '</td>'
         if(date.getDay()% 7 === 6){
             table += '</tr><tr>'
         }
@@ -24,11 +24,11 @@ function calendarCreate(position,year, month){
     }
     table += '</tr></table>'
 
-    position.innerHTML = table;
+    return table;
 }
 
 export{
-    calendarCreate,
+    calendarCreate
 }
 
 

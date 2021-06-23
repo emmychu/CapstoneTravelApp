@@ -5,17 +5,26 @@ function uiUpdate(destination,departDate,returnDate){
     document.getElementById("step-1").style.display = "none";
     let stepTwo =  document.getElementById("step-2")
     stepTwo.style.display = "flex";
-    // let calendarOn = false
-    if(departDate.year === returnDate.year && departDate.month === returnDate.month){
-        document.getElementById("month").innerText = getMonth(departDate.month)
-        calendarCreate(document.getElementById("calendar"), departDate.year,departDate.month)
-    }else{
-        // for(let currentYear = departDate.year ; year <= returnDate.year; currentYear++){
-        //     for(let currentMonth = departDate.month; departDate.month <12; currentMonth++){
-
-        //     }
-        // }
-    }
+    let calendarDiv = document.getElementById("calendar")
+    let currentMonth = departDate.month
+    let currentYear = departDate.year
+    let returnYear = returnDate.year
+    let returnMonth = returnDate.month 
+    calendarDiv.insertAdjacentHTML("afterbegin",(calendarCreate(currentYear, currentMonth)))
+    document.getElementById(`${currentMonth}-${currentYear}`).className = `active-calendar`
+    currentMonth += 1
+    while(currentYear <= returnYear){
+        if (currentYear === returnYear){
+            addMonth(currentMonth,returnMonth,currentYear)
+            currentYear += 1
+            // for(currentMonth; currentMonth <= returnMonth; currentMonth++){
+            //     calendarDiv.insertAdjacentHTML('beforeend',calendarCreate(currentYear,currentMonth))
+            // }
+        }else{
+            addMonth(currentMonth,12,currentYear)
+            currentYear+=1
+        }
+    }    
     return calendarOn
 }
 
@@ -48,16 +57,27 @@ function getMonth(month){
     }
 }
 
+function addMonth(currentMonth,endMonth,currentYear){
+    for(currentMonth; currentMonth <= endMonth; currentMonth++){
+        calendarDiv.insertAdjacentHTML('beforeend',calendarCreate(currentYear,currentMonth))
+    }
+
+}
+
 function calendarView(calendarOn) {
     let stepThree =  document.getElementById("step-3")
+    let viewCal = document.getElementById('view-cal')
     if(calendarOn = false){
         stepThree.style.display = "flex";
+        viewCal.innerText = "Hide calendar"
         return calendarOn = true
     }else{
         stepThree.style.display = "none";
+        viewCal.innerText = "View Calendar"
         return calendarOn = false
     }
 }
+
 
 export{
     uiUpdate,
