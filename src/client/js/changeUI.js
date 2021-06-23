@@ -5,6 +5,7 @@ function uiUpdate(destination,departDate,returnDate){
     document.getElementById("step-1").style.display = "none";
     let stepTwo =  document.getElementById("step-2")
     stepTwo.style.display = "flex";
+    // let calendarOn = false
     if(departDate.year === returnDate.year && departDate.month === returnDate.month){
         document.getElementById("month").innerText = getMonth(departDate.month)
         calendarCreate(document.getElementById("calendar"), departDate.year,departDate.month)
@@ -15,6 +16,7 @@ function uiUpdate(destination,departDate,returnDate){
         //     }
         // }
     }
+    return calendarOn
 }
 
 function getMonth(month){
@@ -46,6 +48,18 @@ function getMonth(month){
     }
 }
 
+function calendarView(calendarOn) {
+    let stepThree =  document.getElementById("step-3")
+    if(calendarOn = false){
+        stepThree.style.display = "flex";
+        return calendarOn = true
+    }else{
+        stepThree.style.display = "none";
+        return calendarOn = false
+    }
+}
+
 export{
-    uiUpdate
+    uiUpdate,
+    calendarView
 }

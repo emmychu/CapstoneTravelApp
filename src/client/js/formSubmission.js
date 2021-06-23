@@ -18,6 +18,7 @@ function submitForm(event) {
             alert("Please input valid dates! Thank you!")
         }
     }
+    
 };
 
 export { submitForm }
