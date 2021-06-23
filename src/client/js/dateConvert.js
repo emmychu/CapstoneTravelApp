@@ -7,3 +7,7 @@ function dateObject(date){
     }
     return dateInfo
 }
+
+export{
+    dateObject
+}

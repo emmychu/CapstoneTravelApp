@@ -3,16 +3,18 @@ function dateCheck(departDate, returnDate) {
     if(returnDate.year >= departDate.year){
         if(returnDate.year > departDate.year){
             return true
-            //return month and day all valid
-        }else{ //return year = depart year
-            if(returnObject.month < departObject.month){
+        }else{
+            if(returnDate.month < departDate.month){
                 return false
             }else{
-                if((returnObject.month === departObject.month && returnObject.day >= departObject.day) || returnObject.month > departObject.month){
+                if((returnDate.month === departDate.month && returnDate.day >= departDate.day) || returnDate.month > departDate.month){
                     return true
                 }
             }
         }
+    }else{
+        console.log("fail")
+        return false
     }
 }
 
