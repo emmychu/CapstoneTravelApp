@@ -1,6 +1,6 @@
 import { submitForm } from './js/formSubmission'
-import {uiUpdate} from './js/changeUI'
-import {createCalendar} from './js/calendar'
+import {previousActive,nextActive, uiUpdate} from './js/changeUI'
+import {calendarCreate} from './js/calendar'
 import { dateObject } from './js/dateConvert'
 import { dateCheck } from './js/validDate'
 import { calendarView } from './js/changeUI'
@@ -9,19 +9,23 @@ import { calendarView } from './js/changeUI'
 import './styles/base.scss'
 import './styles/step1.scss'
 import './styles/step2.scss'
+import './styles/step3.scss'
 
 alert("Please fill out the form and press submit! Thanks!");
 
-let calendarOn = false;
-document.getElementById("view-cal").addEventListener("click", calendarView(calendarOn))
+document.getElementById("view-cal").addEventListener("click", () => {calendarView()})
+document.getElementById("next").addEventListener("click",() => {nextActive()})
+document.getElementById("back").addEventListener("click",() => {previousActive()})
 
 export {
     submitForm,
     dateObject,
     dateCheck,
     uiUpdate,
-    createCalendar,
+    calendarCreate,
     calendarView,
+    nextActive,
+    previousActive,
     // dateCall
 }
 

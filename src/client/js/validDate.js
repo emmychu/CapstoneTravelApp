@@ -1,5 +1,7 @@
 
 function dateCheck(departDate, returnDate) {
+    //need to make valid check for days before current day
+    
     if(returnDate.year >= departDate.year){
         if(returnDate.year > departDate.year){
             return true
@@ -13,7 +15,6 @@ function dateCheck(departDate, returnDate) {
             }
         }
     }else{
-        console.log("fail")
         return false
     }
 }

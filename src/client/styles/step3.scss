@@ -2,19 +2,45 @@
     display:none;
     flex-direction: column;
     align-items: center;
+    grid-area: cal;
 
-    #calendar{
-        table{
-            border-collapse: collapse;
-            border-style: solid;
-            width:100%;
-            min-width:400px;
-            min-height: 400px;
-        }
+    h2{
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        background-color:lightblue;
+        font-size:48px;
+        width:100%;
+        padding-bottom:10px;
+        padding-top:10px;
+        margin-top:0;
+        margin-bottom:0;
+        text-align:center;
+
+    }
+    .active-calendar{
+        padding-top:0;
+        padding-left:10px;
+        padding-right:10px;
+        padding-bottom: 20px;
+        border-collapse:separate;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        border-style:hidden;
+        table-layout:fixed;
+        width:100%;
+        min-width:200px;
+        background-color:lightblue;
+        box-shadow: 5px 5px 5px grey;
+
         td,th{
-            border: 1px solid navy;
+            border: 1px hidden;
+            border-bottom-right-radius: 10px;
+            border-bottom-left-radius: 10px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
             padding: 10px;
             background-color: white;
+            
         }
 
         #day-header{
@@ -25,8 +51,16 @@
         td{
             vertical-align: top;
             text-align:left;
-            min-width: 100px;
-            min-height:500px;
+            min-height:25%;
+
+            p{
+                max-height: 40px;
+                text-align: center;
+            }
         }
+    }
+    
+    .inactive-cal{
+        display:none;
     }
 }

@@ -3,14 +3,14 @@
 function calendarCreate(year, month){
     let mon = month -1
     let date = new Date(year,mon)
-    let table = `<table id = "${month}-${year}"><th id = "day-header">SUN</th><th>MON</th><th>TUE</th><th>WED</th><th>THU</th><th>FRI</th><th>SAT</th></tr><tr>`
+    let table = `<table id = "${month}-${year}" class = "inactive-cal"><th id = "day-header">SUN</th><th>MON</th><th>TUE</th><th>WED</th><th>THU</th><th>FRI</th><th>SAT</th></tr><tr>`
 
     for(let i = 0; i < date.getDay(); i++){
         table += '<td></td>'
     }
 
     while(date.getMonth() == mon){
-        table += `<td id="${month}-${date.getDate()}">` + date.getDate() + '</td>'
+        table += `<td id="${month}-${date.getDate()}-${year}">` + `<b>${date.getDate()}</b>` + '</td>'
         if(date.getDay()% 7 === 6){
             table += '</tr><tr>'
         }
