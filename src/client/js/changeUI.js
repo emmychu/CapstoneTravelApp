@@ -1,7 +1,7 @@
 import { calendarCreate } from './calendar'
 import { colorTrip } from './highlight'
 import { tripSummary } from './tripDetails'
-import { getCoordinates } from './coordinateApi'
+import { getCoordinates } from './apiCalls'
 
 let stepThree =  document.getElementById("step-3")
 
