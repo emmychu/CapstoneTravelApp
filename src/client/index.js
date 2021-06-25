@@ -4,6 +4,7 @@ import {calendarCreate} from './js/calendar'
 import { dateObject } from './js/dateConvert'
 import { dateCheck } from './js/validDate'
 import { calendarView } from './js/changeUI'
+import { tripSummary, countDown, duration } from './js/tripDetails'
 // import { hello } from './js/dataCall'
 
 import './styles/base.scss'
@@ -26,6 +27,9 @@ export {
     calendarView,
     nextActive,
     previousActive,
+    tripSummary,
+    countDown,
+    duration,
     // dateCall
 }
 

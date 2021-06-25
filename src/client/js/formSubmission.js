@@ -7,8 +7,7 @@ function submitForm(event) {
     let destination = document.getElementById("first-destination").value
     if(destination.length === 0){
         alert("Please input a destination! Thank you!")
-    }
-    else{
+    }else{
         let departObject = dateObject(document.getElementById("depart-date").value)
         let returnObject = dateObject(document.getElementById("return-date").value)
         let validDates = dateCheck(departObject,returnObject)

@@ -1,5 +1,6 @@
 import { calendarCreate } from './calendar'
 import { colorTrip } from './highlight'
+import { tripSummary, countDown} from './tripDetails'
 
 let stepThree =  document.getElementById("step-3")
 
@@ -14,6 +15,8 @@ function uiUpdate(destination,departDate,returnDate){
     let currentYear = departDate.year
     let returnYear = returnDate.year
     let returnMonth = returnDate.month 
+    tripSummary(destination,departDate,returnDate)
+    document.getElementById("destination").innerText = destination
     calendarDiv.insertAdjacentHTML("afterbegin",(calendarCreate(currentYear, currentMonth)))
     document.getElementById(`${currentMonth}-${currentYear}`).className = 'active-calendar'
     document.getElementById("month").innerText = `${getMonth(currentMonth)} ${currentYear}`
@@ -116,15 +119,15 @@ function nextActive(){
         document.getElementById("month").innerText = `${getMonth(currentMonth)} ${currentYear}`
         document.getElementById(`${currentMonth}-${currentYear}`).className = "active-calendar"
         if(document.getElementById(`1-${currentYear + 1}`) == null){
-            document.getElementById("next").style.display = none;
+            document.getElementById("next").style.display = "none";
         }
     }else if(currentMonth === 13){
         currentMonth = 1
         currentYear += 1
         document.getElementById("month").innerText = `${getMonth(currentMonth)} ${currentYear}`
         document.getElementById(`${currentMonth}-${currentYear}`).className = "active-calendar"
-        if(document.getElementById(`${currentMonth}-${currentYear}`) == null){
-            document.getElementById("next").style.display = none;
+        if(document.getElementById(`${currentMonth + 1}-${currentYear}`) == null){
+            document.getElementById("next").style.display = "none";
         }
     }else{
         document.getElementById("month").innerText = `${getMonth(currentMonth)} ${currentYear}`
@@ -148,7 +151,7 @@ function previousActive(){
         document.getElementById("month").innerText = `${getMonth(currentMonth)} ${currentYear}`
         document.getElementById("next").style.display = "flex"
         if(document.getElementById(`12-${currentYear-1}`) == null){
-            document.getElementById("back").style.display = none;
+            document.getElementById("back").style.display = "none";
         }
     }else if(currentMonth === 0){
         currentMonth = 12
@@ -156,7 +159,7 @@ function previousActive(){
         document.getElementById("month").innerText = `${getMonth(currentMonth)} ${currentYear}`
         document.getElementById(`${currentMonth}-${currentYear}`).className = "active-calendar"
         if(document.getElementById(`${currentMonth-1}-${currentYear}`) == null){
-            document.getElementById("next").style.display = none;
+            document.getElementById("next").style.display = "none";
         }
     }else{
         document.getElementById("month").innerText = `${getMonth(currentMonth)} ${currentYear}`

@@ -3,34 +3,44 @@
     flex-direction: column;
     align-items: center;
     grid-area: cal;
+    z-index: 0;
 
     h2{
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
         background-color:lightblue;
         font-size:48px;
-        width:100%;
         padding-bottom:10px;
+        width:70%;
+        box-shadow: 5px 5px 5px grey;
         padding-top:10px;
         margin-top:0;
         margin-bottom:0;
         text-align:center;
 
     }
+    table{
+        width:85%;
+        justify-self: center;
+
+    }
     .active-calendar{
-        padding-top:0;
+        padding-top:20px;
         padding-left:10px;
         padding-right:10px;
         padding-bottom: 20px;
         border-collapse:separate;
         border-bottom-left-radius: 10px;
         border-bottom-right-radius: 10px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
         border-style:hidden;
         table-layout:fixed;
         width:100%;
         min-width:200px;
         background-color:lightblue;
         box-shadow: 5px 5px 5px grey;
+        margin-bottom: 20px;
 
         td,th{
             border: 1px hidden;
@@ -59,8 +69,13 @@
             }
         }
     }
-    
+
     .inactive-cal{
         display:none;
+    }
+
+    #calendar{
+        margin-right:100px;
+        margin-left: 100px;
     }
 }

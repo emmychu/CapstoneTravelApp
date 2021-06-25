@@ -14,6 +14,4 @@
 * `npm i -D html-webpack-plugin`
 * `npm i -D mini-css-extract-plugin`
 * `npm i -D optimize-css-assets-webpack-plugin terser-webpack-plugin`
-* `npm i url-loader --save-dev`
-* `npm i file-loader --save-dev`
-* `npm i html-loader --save-dev`
+* `npm i node-fetch`
