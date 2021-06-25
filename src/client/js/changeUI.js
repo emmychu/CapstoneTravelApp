@@ -1,6 +1,7 @@
 import { calendarCreate } from './calendar'
 import { colorTrip } from './highlight'
-import { tripSummary, countDown} from './tripDetails'
+import { tripSummary } from './tripDetails'
+import { getCoordinates } from './coordinateApi'
 
 let stepThree =  document.getElementById("step-3")
 
@@ -16,6 +17,7 @@ function uiUpdate(destination,departDate,returnDate){
     let returnYear = returnDate.year
     let returnMonth = returnDate.month 
     tripSummary(destination,departDate,returnDate)
+    getCoordinates(destination)
     document.getElementById("destination").innerText = destination
     calendarDiv.insertAdjacentHTML("afterbegin",(calendarCreate(currentYear, currentMonth)))
     document.getElementById(`${currentMonth}-${currentYear}`).className = 'active-calendar'
