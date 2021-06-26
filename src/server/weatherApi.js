@@ -1,6 +1,6 @@
 const base = "https://api.weatherbit.io/v2.0/forecast/daily?key="
 
-function getImage(coordinates,apiKey) {
+function getWeather(coordinates,apiKey) {
     const url = base + apiKey + "&" + coordinates
     let response = await fetch(url,{
         method: 'GET',

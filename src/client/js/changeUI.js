@@ -1,7 +1,8 @@
 import { calendarCreate } from './calendar'
 import { colorTrip } from './highlight'
 import { tripSummary } from './tripDetails'
-import { getCoordinates } from './apiCalls'
+import {postData} from '../js/postData'
+import { dateCheck } from './validDate'
 
 let stepThree =  document.getElementById("step-3")
 
@@ -16,10 +17,9 @@ function uiUpdate(destination,departDate,returnDate){
     let currentYear = departDate.year
     let returnYear = returnDate.year
     let returnMonth = returnDate.month 
-    tripSummary(destination,departDate,returnDate)
-    getCoordinates(destination)
-    document.getElementById("destination").innerText = destination
-    calendarDiv.insertAdjacentHTML("afterbegin",(calendarCreate(currentYear, currentMonth)))
+    tripSummary(destination[0],departDate,returnDate)
+    document.getElementById("destination").innerText = destination[0]
+    calendarDiv.insertAdjacentHTML("afterbegin",(Client.calendarCreate(currentYear, currentMonth)))
     document.getElementById(`${currentMonth}-${currentYear}`).className = 'active-calendar'
     document.getElementById("month").innerText = `${getMonth(currentMonth)} ${currentYear}`
     currentMonth += 1
@@ -35,6 +35,12 @@ function uiUpdate(destination,departDate,returnDate){
         }
     }
     colorTrip(departDate,returnDate)
+    postData('http://localhost:8095/submission', destination)
+    .then((data) => {
+        let lat = data[9]
+        let lon = data[3]
+        console.log(data);
+    })
 }
 
 function getMonth(month){

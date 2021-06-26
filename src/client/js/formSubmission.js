@@ -4,15 +4,21 @@ import { uiUpdate } from './changeUI'
 
 function submitForm(event) {
     event.preventDefault()
-    let destination = document.getElementById("first-destination").value
-    if(destination.length === 0){
-        alert("Please input a destination! Thank you!")
+    let city = document.getElementById("first-destination").value
+    let country = document.getElementById("country").value
+    let state = document.getElementById("state").value
+    console.log(city)
+    console.log(country)
+    console.log(state)
+    let destination = [city,country,state]
+    if(destination.length === 0 && country.length === 0){
+        alert("Please input a destination placing the City,Country code without spaces! Thank you!")
     }else{
         let departObject = dateObject(document.getElementById("depart-date").value)
         let returnObject = dateObject(document.getElementById("return-date").value)
         let validDates = dateCheck(departObject,returnObject)
         if(validDates === true){
-            uiUpdate(destination, departObject, returnObject)
+            Client.uiUpdate(destination, departObject, returnObject)
         }else{
             alert("Please input valid dates! Thank you!")
         }

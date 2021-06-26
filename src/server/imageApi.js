@@ -1,12 +1,14 @@
+const fetch = require("node-fetch");
 
 const base = "https://pixabay.com/api/?key="
-function getImage(apiKey,destination) {
+const getImage = async(apiKey,destination) => {
     let preSearch = destination.split(" ")
     let searchTerm = ""
     if(preSearch.length > 1){
         for(let n = 0; n < preSearch.length; n++){
             searchTerm += `+${preSearch[n]}`
         }
+        console.log(searchTerm)
     }else{
         searchTerm = preSearch[0]
     }
@@ -23,3 +25,5 @@ function getImage(apiKey,destination) {
         console.log("error",error);
     }
 }
+
+module.exports = getImage

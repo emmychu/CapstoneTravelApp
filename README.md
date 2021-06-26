@@ -15,3 +15,4 @@
 * `npm i -D mini-css-extract-plugin`
 * `npm i -D optimize-css-assets-webpack-plugin terser-webpack-plugin`
 * `npm i node-fetch`
+* `npm i dotenv`
