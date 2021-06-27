@@ -7,9 +7,6 @@ function submitForm(event) {
     let city = document.getElementById("first-destination").value
     let country = document.getElementById("country").value
     let state = document.getElementById("state").value
-    console.log(city)
-    console.log(country)
-    console.log(state)
     let destination = [city,country,state]
     if(destination.length === 0 && country.length === 0){
         alert("Please input a destination placing the City,Country code without spaces! Thank you!")

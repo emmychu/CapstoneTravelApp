@@ -1,6 +1,8 @@
 
 body{
-    background-color: rgb(255, 226, 231);
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-color: pink;
     display: grid;
     grid-template-areas:
     "head"
@@ -24,6 +26,7 @@ body{
        width: 1000px;
        text-align:right;
        padding-right:100px;
+       color:white;
     }
 
     .info{
@@ -49,7 +52,6 @@ body{
     }
     #back{
         z-index:0;
-        position: relative;
         grid-area:back;
         padding-top:10px;
         justify-self:center;

@@ -7,6 +7,8 @@ const express = require('express')
 var bodyParser = require('body-parser')
 var cors = require('cors');
 const getCoordinates = require('./coordinateAPI');
+const getImage = require('./imageApi');
+const getWeather = require ('./weatherApi')
 
 const app = express()
 app.use(cors())
@@ -40,3 +42,22 @@ function getData(request, response){
         response.send(data)
     })
 }
+
+app.post('/image', getPic)
+
+function getPic(request, response){
+    getImage(textAPI['photoKey'],request.body)
+    .then((data) =>{
+        response.send(data)
+    })
+}
+
+app.post('/weather', weatherAPI)
+
+function weatherAPI(request,response){
+    getWeather(textAPI['weatherKey'],request.body)
+    .then((data)=>{
+        response.send(data)
+    })
+}
+    

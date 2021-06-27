@@ -35,11 +35,16 @@ function uiUpdate(destination,departDate,returnDate){
         }
     }
     colorTrip(departDate,returnDate)
+    postData('http://localhost:8095/image', destination)
+    .then((data) => {
+        console.log(data)
+        document.getElementsByTagName("body")[0].style.backgroundImage = `url("${data['hits'][0]['largeImageURL']}")`
+    })
     postData('http://localhost:8095/submission', destination)
     .then((data) => {
         let lat = data[9]
         let lon = data[3]
-        console.log(data);
+        postData('http://localhost:8095/weather',[lat,lon])
     })
 }
 
