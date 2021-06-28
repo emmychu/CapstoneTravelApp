@@ -3,7 +3,9 @@ body{
     background-repeat: no-repeat;
     background-size:cover;
     background-color: pink;
+    background-attachment: fixed;
     display: grid;
+    min-height: 100%;
     grid-template-areas:
     "head"
     "info"
@@ -17,20 +19,23 @@ body{
 
     h1{
        background-color: rgba(55, 63, 138, 0.678);
-       border-top-left-radius: 10px;
-       border-top-right-radius: 10px;
-       padding:20px; 
+       font-family: 'Dancing Script', cursive;
+       width: 100vw;
+       top:0;
+       left:0;
+       padding-top: 20px;
+       padding-bottom: 20px;
        font-size: 70px; 
        grid-area: head;
-       min-width: 500px;
-       width: 1000px;
-       text-align:right;
-       padding-right:100px;
+       text-align: center;
        color:white;
     }
 
     .info{
         grid-area: info;
+        font-family: 'Source Serif Pro', serif;
+        font-size: 18px;
+        font-weight: 500;
         #submit-button{
             max-width: 100px;
         }
@@ -48,7 +53,7 @@ body{
         border-bottom-left-radius: 10px;
         border-bottom-right-radius: 10px;
         box-shadow: 5px 5px 5px grey;
-        margin-bottom: 20px;
+        margin-bottom: 100px;
     }
     #back{
         z-index:0;
@@ -63,21 +68,38 @@ body{
         border-top-right-radius: 10px;
         box-shadow: 5px 5px 5px grey;
     }
-    #view-cal{
-        grid-area:tab;
-        padding-top:20px;
-        padding-bottom:20px;
-        width:100%;
-        justify-self: center;
-        justify-content: center;
-        display: none;
+  
+    #cal{
+        margin: 100px;
     }
-
-    #view-cal:hover{
-        color:yellow;
-    }
-    
     footer{
         grid-area: foot;
+        position:fixed;
+        z-index: 1;
+        left:0;
+        bottom:0;
+        width:100%;
+        background-color:rgba(55, 63, 138, 0.678);
+        color:white;
+        padding:5px;
+        min-height: 50px;
+        align-items:center;
+        margin-top: 10px;
+
+        #view-cal{
+            grid-area: foot;
+            margin-top: 10px;
+            padding: 5px;
+            max-width:max-content;
+            display: none;
+            background-color:pink;
+            color: black;
+            opacity:85%;
+            border-radius: 10px;
+        }
+    
+        #view-cal:hover{
+            color:rgb(179, 115, 137);
+        }
     }
 }

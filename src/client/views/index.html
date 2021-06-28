@@ -2,12 +2,15 @@
 <html lang = "en">
     <head>
         <title>Adventure Awaits!</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lobster&family=Source+Serif+Pro:ital,wght@1,300&display=swap" rel="stylesheet">
         <meta charset="UTF-8">
     </head>
     <body class = "container">
         <div id = "step-1" class = "info">
             <header>
-                <h1>Adventure waits for No one!</h1>
+                <h1>Adventure waits for no one!</h1>
             </header>
                 <div id = "info-submit">
                     <div class ="questions">Where are you going?: <input type = "text" id = "first-destination" placeholder = "City"></div>
@@ -22,16 +25,16 @@
             <!-- Background should reflect initial city -->
             <h1 id = "destination">Insert Destination Here</h1>
         </div>
-        <div id= "back"><img src="https://img.icons8.com/ultraviolet/40/000000/collapse-arrow.png"/></div>
+        <div id= "back" class = "cal"><img src="https://img.icons8.com/ultraviolet/40/000000/collapse-arrow.png"/></div>
         <div id ="step-3" class = "info">
-            <h2 id = "month" >Insert Month here</h2>
-            <div id = "calendar">
+            <h2 id = "month" class = "cal">Insert Month here</h2>
+            <div id = "calendar" class = "cal">
             </div>
         </div>
-        <div id="next"><img src="https://img.icons8.com/ultraviolet/40/000000/expand-arrow--v1.png" alt="next month"/></div>
-        <a id = "view-cal">Click here to view calendar below!</a>
+        <div id="next" class = "cal"><img src="https://img.icons8.com/ultraviolet/40/000000/expand-arrow--v1.png" alt="next month"/></div>
+        
         <footer>
-                hello i am footer
+                <a id = "view-cal">Click here to view the calendar!</a>
                 <!-- Should have button to return to the beginning -->
         </footer>
     </body>

@@ -3,15 +3,28 @@
     flex-direction: column;
     align-items: center;
 
-
+    h1{
+        background-color: rgba(55, 63, 138, 0.678);
+        font-family: 'Dancing Script', cursive;
+        padding: 20px;
+        width:100vw;
+        font-size: 70px; 
+        grid-area: head;
+        text-align:center;
+        color:white;
+     }
+ 
     #trip-info{
         width: 1000px;
         margin-bottom: 10px;
+        font-family: 'Source Serif Pro', serif;
+        top:200px;
         z-index:2;
         padding:10px;
         text-align: center;
         background-color: white;
         opacity: 85%;
         border-radius: 10px;
+        justify-self: center;
     }
 }

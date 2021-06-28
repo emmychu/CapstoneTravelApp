@@ -10,7 +10,7 @@ const getWeather = async(apiKey,coordinates) => {
     })
     try{
         let data = await response.json()
-        console.log(data['data'][0]['weather'])
+        console.log([data['data'][0]['datetime'], date['data'][0]['weather']['description']])
         return(data)
     }catch(error){
         console.log("error",error);

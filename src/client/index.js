@@ -19,6 +19,7 @@ document.getElementById("view-cal").addEventListener("click", () => {Client.cale
 document.getElementById("next").addEventListener("click",() => {Client.nextActive()})
 document.getElementById("back").addEventListener("click",() => {Client.previousActive()})
 
+
 export {
     submitForm,
     dateObject,
