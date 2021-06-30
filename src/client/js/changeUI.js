@@ -128,6 +128,7 @@ function calendarView(){
 
 //Function to move between active and inactive calendars, this is the forward function attached to an event listener
 function nextActive(){
+    let next = document.getElementById("next")
     document.getElementById("back").style.display = "flex";
     let currentActive = document.getElementsByClassName("active-calendar")[0].id
     let dashPosition = currentActive.indexOf("-")
@@ -139,7 +140,7 @@ function nextActive(){
         document.getElementById("month").innerText = `${getMonth(currentMonth)} ${currentYear}`
         document.getElementById(`${currentMonth}-${currentYear}`).className = "active-calendar"
         if(document.getElementById(`1-${currentYear + 1}`) == null){
-            document.getElementById("next").style.display = "none";
+            next.style.display = "none";
         }
     }else if(currentMonth === 13){
         currentMonth = 1
@@ -147,13 +148,13 @@ function nextActive(){
         document.getElementById("month").innerText = `${getMonth(currentMonth)} ${currentYear}`
         document.getElementById(`${currentMonth}-${currentYear}`).className = "active-calendar"
         if(document.getElementById(`${currentMonth + 1}-${currentYear}`) == null){
-            document.getElementById("next").style.display = "none";
+            next.style.display = "none";
         }
     }else{
         document.getElementById("month").innerText = `${getMonth(currentMonth)} ${currentYear}`
         document.getElementById(`${currentMonth}-${currentYear}`).className = "active-calendar"
         if(document.getElementById(`${currentMonth +1}-${currentYear}`) === null){
-            document.getElementById("next").style.display = "none";
+            next.style.display = "none";
         }
     }
 
@@ -161,6 +162,8 @@ function nextActive(){
 
 //Backwards function attached to an event listener
 function previousActive(){
+    let back = document.getElementById("back")
+    document.getElementById("next").style.display = "flex";
     let currentActive = document.getElementsByClassName("active-calendar")[0].id
     let dashPosition = currentActive.indexOf("-")
     let currentMonth = parseInt(currentActive.slice(0,dashPosition))
@@ -170,9 +173,8 @@ function previousActive(){
     if(currentMonth === 1){
         document.getElementById(`${currentMonth}-${currentYear}`).className = "active-calendar"
         document.getElementById("month").innerText = `${getMonth(currentMonth)} ${currentYear}`
-        document.getElementById("next").style.display = "flex"
         if(document.getElementById(`12-${currentYear-1}`) == null){
-            document.getElementById("back").style.display = "none";
+            back.style.display = "none";
         }
     }else if(currentMonth === 0){
         currentMonth = 12
@@ -180,14 +182,13 @@ function previousActive(){
         document.getElementById("month").innerText = `${getMonth(currentMonth)} ${currentYear}`
         document.getElementById(`${currentMonth}-${currentYear}`).className = "active-calendar"
         if(document.getElementById(`${currentMonth-1}-${currentYear}`) == null){
-            document.getElementById("next").style.display = "none";
+            back.style.display = "none";
         }
     }else{
         document.getElementById("month").innerText = `${getMonth(currentMonth)} ${currentYear}`
         document.getElementById(`${currentMonth}-${currentYear}`).className = "active-calendar"
-        document.getElementById("next").style.display = "flex"
         if(document.getElementById(`${currentMonth -1}-${currentYear}`) === null){
-            document.getElementById("back").style.display = "none";
+            back.style.display = "none";
         }
     }  
 
