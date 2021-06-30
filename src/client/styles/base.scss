@@ -40,34 +40,7 @@ body{
             max-width: 100px;
         }
     }
-    #next{
-        z-index:0;
-        display:none;
-        padding-top: 10px;
-        padding-bottom:10px;
-        grid-area: next;
-        justify-self: center;
-        justify-content: center;
-        width: 100px;
-        background-color:lightblue;
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
-        box-shadow: 5px 5px 5px grey;
-        margin-bottom: 100px;
-    }
-    #back{
-        z-index:0;
-        grid-area:back;
-        padding-top:10px;
-        justify-self:center;
-        justify-content: center;
-        width: 100px;
-        display:none;
-        background-color:lightblue;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-        box-shadow: 5px 5px 5px grey;
-    }
+    
   
     #cal{
         margin: 100px;

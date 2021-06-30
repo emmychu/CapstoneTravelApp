@@ -1,7 +1,7 @@
 const fetch = require("node-fetch");
 
 const base = "http://api.geonames.org/postalCodeSearchJSON?placename="
-
+//Retrieves the coordinates from Geonames
 const getCoordinates = async(destination) => {
     const url = base + destination[0]+ `&country=`+ destination[1] + "&username=moofiemonster&maxRows=10"
     let response = await fetch(url,{
