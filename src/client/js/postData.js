@@ -1,4 +1,5 @@
 // Makes the call to the server to make the api call
+
 const postData = async (url = '', data = {})=>{
     const response = await fetch(url, {
         method: 'POST',

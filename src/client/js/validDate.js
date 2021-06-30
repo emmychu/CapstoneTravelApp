@@ -1,3 +1,4 @@
+//Function to check if a date is valid in regards to departing and returning
 
 function dateCheck(departDate, returnDate) {
     //need to make valid check for days before current day

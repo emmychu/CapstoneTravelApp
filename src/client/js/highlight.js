@@ -1,3 +1,5 @@
+//Function to color the depart date and return date on the calendar
+
 function colorTrip(departDate,returnDate){
     let returnMonth = returnDate.month
     let returnDay = returnDate.day

@@ -2,10 +2,14 @@ import { calendarCreate } from './calendar'
 import { colorTrip } from './highlight'
 import { tripSummary } from './tripDetails'
 import {postData} from '../js/postData'
-import { dateCheck } from './validDate'
 
+//Global variables
 let stepThree =  document.getElementById("step-3")
+let viewCal = document.getElementById('view-cal')
 
+//Several functions that work to change the UI\
+
+//This function is used to perform the major UI change from step 1 to 3 (step 2 is the trip information that is populated)
 function uiUpdate(destination,departDate,returnDate){
     document.getElementById("step-1").style.display = "none";
     let stepTwo =  document.getElementById("step-2")
@@ -48,6 +52,7 @@ function uiUpdate(destination,departDate,returnDate){
     })
 }
 
+//This function checks the month that is given and returns the month non-numerically so that it can be displayed with the calendar
 function getMonth(month){
     switch (month){
         case 1:
@@ -77,13 +82,14 @@ function getMonth(month){
     }
 }
 
+//This is a supplemental function to create the calendar for the following month
 function addMonth(position,currentMonth,endMonth,currentYear){
     for(currentMonth; currentMonth <= endMonth; currentMonth++){
         position.insertAdjacentHTML('beforeend',calendarCreate(currentYear,currentMonth))
     }
 }
-let viewCal = document.getElementById('view-cal')
 
+//Attached to an event listener to show or hide the calendar
 function calendarView(){
     if(stepThree.style.display === "none"){
         stepThree.style.display = "flex";
@@ -120,6 +126,7 @@ function calendarView(){
     }
 }
 
+//Function to move between active and inactive calendars, this is the forward function attached to an event listener
 function nextActive(){
     document.getElementById("back").style.display = "flex";
     let currentActive = document.getElementsByClassName("active-calendar")[0].id
@@ -152,6 +159,7 @@ function nextActive(){
 
 }
 
+//Backwards function attached to an event listener
 function previousActive(){
     let currentActive = document.getElementsByClassName("active-calendar")[0].id
     let dashPosition = currentActive.indexOf("-")

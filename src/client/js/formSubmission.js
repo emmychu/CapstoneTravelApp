@@ -2,6 +2,8 @@ import { dateObject } from './dateConvert'
 import { dateCheck } from './validDate'
 import { uiUpdate } from './changeUI'
 
+
+//Function to submit form to eventually change the UI
 function submitForm(event) {
     event.preventDefault()
     let city = document.getElementById("first-destination").value

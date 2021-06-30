@@ -1,4 +1,4 @@
-
+//Creates the div that contains a summary of the trip details.
 function tripSummary(destination, departDate, returnDate){
     let totalDays = duration(departDate,returnDate)
     document.getElementById("destination").insertAdjacentHTML("afterend",
