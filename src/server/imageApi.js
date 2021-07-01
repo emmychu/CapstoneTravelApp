@@ -9,12 +9,11 @@ const getImage = async(apiKey,destination) => {
         for(let n = 0; n < preSearch.length; n++){
             searchTerm += `+${preSearch[n]}`
         }
-        console.log(searchTerm)
     }else{
         searchTerm = preSearch[0]
     
     }
-    const url = base + apiKey + "&q=" + searchTerm +"&image_type=photo"
+    const url = base + apiKey + "&q=" + searchTerm +"&image_type=photo&category=places"
     let response = await fetch(url,{
         method: 'GET',
         headers:{'Content-Type':'application/json'}

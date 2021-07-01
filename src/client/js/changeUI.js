@@ -41,14 +41,29 @@ function uiUpdate(destination,departDate,returnDate){
     colorTrip(departDate,returnDate)
     postData('http://localhost:8095/image', destination)
     .then((data) => {
-        console.log(data)
-        document.getElementsByTagName("body")[0].style.backgroundImage = `url("${data['hits'][0]['largeImageURL']}")`
+        let total = data['hits'].length
+        document.getElementsByTagName("body")[0].style.backgroundImage = `url("${data['hits'][Math.floor(Math.random() * total)]['largeImageURL']}")`
     })
     postData('http://localhost:8095/submission', destination)
     .then((data) => {
-        let lat = data[9]
-        let lon = data[3]
-        postData('http://localhost:8095/weather',[lat,lon])
+        if(destination[2].length > 0){
+            let lat = data[9]
+            let lon = data[3]
+            console.log(data)
+            postData('http://localhost:8095/weather',[lat,lon])
+            .then((data) =>{
+                console.log(data['data'])
+            })
+        }else{
+            let lat = data['lat']
+            let lon = data['lng']
+            postData('http://localhost:8095/weather',[lat,lon])
+            .then((data) =>{
+                console.log(data['data'])
+            })
+        }
+
+       
     })
 }
 
@@ -193,6 +208,7 @@ function previousActive(){
     }  
 
 }
+
 
 export{
     uiUpdate,
