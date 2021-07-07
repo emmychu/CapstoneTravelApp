@@ -5,8 +5,8 @@ import { dateObject } from './js/dateConvert'
 import { dateCheck } from './js/validDate'
 import { calendarView } from './js/changeUI'
 import { tripSummary, countDown, duration } from './js/tripDetails'
-import { getCoordinates } from '../server/coordinateAPI'
-// import { hello } from './js/dataCall'
+import { addWeather} from './js/weatherData'
+import { postData} from './js/postData'
 
 import './styles/base.scss'
 import './styles/step1.scss'
@@ -32,6 +32,7 @@ export {
     tripSummary,
     countDown,
     duration,
-    // dataCall
+    addWeather,
+    postData
 }
 

@@ -2,6 +2,7 @@ import { calendarCreate } from './calendar'
 import { colorTrip } from './highlight'
 import { tripSummary } from './tripDetails'
 import {postData} from '../js/postData'
+import { addWeather } from './weatherData'
 
 //Global variables
 let stepThree =  document.getElementById("step-3")
@@ -46,24 +47,22 @@ function uiUpdate(destination,departDate,returnDate){
     })
     postData('http://localhost:8095/submission', destination)
     .then((data) => {
+        console.log(data)
         if(destination[2].length > 0){
             let lat = data[9]
             let lon = data[3]
-            console.log(data)
             postData('http://localhost:8095/weather',[lat,lon])
             .then((data) =>{
-                console.log(data['data'])
+                addWeather(data['data'])
             })
         }else{
             let lat = data['lat']
             let lon = data['lng']
             postData('http://localhost:8095/weather',[lat,lon])
             .then((data) =>{
-                console.log(data['data'])
+                addWeather(data['data'])
             })
         }
-
-       
     })
 }
 

@@ -16,3 +16,6 @@
 * `npm i -D optimize-css-assets-webpack-plugin terser-webpack-plugin`
 * `npm i node-fetch`
 * `npm i dotenv`
+
+## Notes
+* Refer to this [link] (http://www.geonames.org/export/free-geocoding.html) to view supported countries
