@@ -45,25 +45,34 @@ function uiUpdate(destination,departDate,returnDate){
         let total = data['hits'].length
         document.getElementsByTagName("body")[0].style.backgroundImage = `url("${data['hits'][Math.floor(Math.random() * total)]['largeImageURL']}")`
     })
-    postData('http://localhost:8095/submission', destination)
-    .then((data) => {
-        console.log(data)
-        if(destination[2].length > 0){
-            let lat = data[9]
-            let lon = data[3]
-            postData('http://localhost:8095/weather',[lat,lon])
-            .then((data) =>{
-                addWeather(data['data'])
-            })
-        }else{
-            let lat = data['lat']
-            let lon = data['lng']
-            postData('http://localhost:8095/weather',[lat,lon])
-            .then((data) =>{
-                addWeather(data['data'])
-            })
-        }
-    })
+    const now = new Date().getTime()
+    const depart = new Date(`${departDate.month}/${departDate.day}/${departDate.year}`).getTime()
+    const difference = (depart - now)/(1000*60*60*24)
+    console.log(difference)
+    if(difference <= 16) {
+        postData('http://localhost:8095/submission', destination)
+        .then((data) => {
+            if(destination[2].length > 0){
+                let lat = data[9]
+                let lon = data[3]
+                if(departDate)
+                postData('http://localhost:8095/weather',[lat,lon])
+                .then((data) =>{
+                    addWeather(data['data'])
+                })
+            }else{
+                let lat = data['postalCodes'][0]['lat']
+                let lon = data['postalCodes'][0]['lng']
+                postData('http://localhost:8095/weather',[lat,lon])
+                .then((data) =>{
+                    addWeather(data['data'])
+                })
+            }
+        })
+    }else{
+        alert("Weather forecasts are only available 16 days in advance!")
+    }
+
 }
 
 //This function checks the month that is given and returns the month non-numerically so that it can be displayed with the calendar

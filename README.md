@@ -19,3 +19,7 @@
 
 ## Notes
 * Refer to this [link] (http://www.geonames.org/export/free-geocoding.html) to view supported countries
+
+
+## Credits to:
+* calendar creation tutorial used from [here] (https://javascript.info/task/calendar-table)
