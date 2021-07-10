@@ -37,9 +37,9 @@
                 <!-- Should have button to return to the beginning -->
         </footer>
         <script>
-            if ('serviceWorker' in navigator){
+            if ('serviceWorker' in navigator) {
                 window.addEventListener('load', () => {
-                    navigator.serviceWorker.register('/service-worker.js')
+                    navigator.serviceWorker.register('/service-worker.js');
                 });
             }
         </script>
