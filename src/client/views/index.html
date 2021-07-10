@@ -32,11 +32,16 @@
             </div>
             <div id="next" class = "cal"><img src="https://img.icons8.com/ultraviolet/40/000000/expand-arrow--v1.png" alt="next month"/></div>
         </div>
-        
-        
         <footer>
                 <a id = "view-cal">Click here to view the calendar!</a>
                 <!-- Should have button to return to the beginning -->
         </footer>
+        <script>
+            if ('serviceWorker' in navigator){
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('/service-worker.js')
+                });
+            }
+        </script>
     </body>
 </html>
