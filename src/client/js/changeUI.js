@@ -48,7 +48,6 @@ function uiUpdate(destination,departDate,returnDate){
     const now = new Date().getTime()
     const depart = new Date(`${departDate.month}/${departDate.day}/${departDate.year}`).getTime()
     const difference = (depart - now)/(1000*60*60*24)
-    console.log(difference)
     if(difference <= 16) {
         postData('http://localhost:8095/submission', destination)
         .then((data) => {

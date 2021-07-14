@@ -12,6 +12,6 @@ describe("Testing date validity", () => {
             'day': 30,
             'year': 2020
         }
-        expect(dateCheck(departDate,returnDate)).toBe("invalid")     
+        expect(dateCheck(departDate,returnDate)).toBeUndefined     
     });
 });
