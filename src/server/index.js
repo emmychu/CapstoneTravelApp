@@ -31,13 +31,13 @@ app.listen(8095, () => {
 app.post('/submission', getData);
 
 var textAPI = {
-    geoUser: process.env.API_KEY_USER,
+    geoUser: process.env.GEO_USER,
     photoKey: process.env.API_KEY_PIX,
     weatherKey: process.env.API_KEY_WEATHER
 }
 
 function getData(request, response){
-    getCoordinates(request.body)
+    getCoordinates(textAPI['geoUser'],request.body)
     .then((data) =>{
         response.send(data)
     })

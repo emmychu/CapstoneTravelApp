@@ -17,6 +17,10 @@
 * `npm i node-fetch`
 * `npm i dotenv`
 
+## Extend Options:
+* Add end date and displayed length of trip
+* Forecast for multiple days
+
 ## Notes
 * Refer to this [link] (http://www.geonames.org/export/free-geocoding.html) to view supported countries
 
