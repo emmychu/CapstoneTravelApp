@@ -47,6 +47,7 @@ function getData(request, response){
 app.post('/image', getPic)
 
 function getPic(request, response){
+    console.log("meep")
     getImage(textAPI['photoKey'],request.body)
     .then((data) =>{
         response.send(data)
