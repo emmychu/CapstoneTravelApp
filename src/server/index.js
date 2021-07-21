@@ -1,3 +1,4 @@
+
 const dotenv = require('dotenv');
 dotenv.config();
 
@@ -60,4 +61,5 @@ function weatherAPI(request,response){
         response.send(data)
     })
 }
-    
+
+module.exports = app

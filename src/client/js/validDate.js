@@ -3,7 +3,6 @@
 function dateCheck(departDate, returnDate) {
     //need to make valid check for days before current day
     const now = new Date().getTime()
-    console.log(now)
     const depart = new Date(`${departDate.month}/${departDate.day}/${departDate.year}`).getTime()
     const difference = depart - now
     if(difference < 0){

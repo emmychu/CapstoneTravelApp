@@ -3,8 +3,10 @@ const fetch = require("node-fetch");
 const base = "https://pixabay.com/api/?key="
 //Searches for images based on user inputted desination
 const getImage = async(apiKey,destination) => {
+    console.log(destination)
     let preSearch = destination[0].split(" ")
     let searchTerm = ""
+    console.log("i'm here")
     if(preSearch.length > 1){
         for(let n = 0; n < preSearch.length; n++){
             searchTerm += `+${preSearch[n]}`
