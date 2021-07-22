@@ -8,7 +8,7 @@
         "build-prod": "webpack --config webpack.prod.js",
         "build-dev": "webpack serve --config webpack.dev.js --open"
     },
-    "jest":{
+    "jest": {
         "testEnvironment": "node"
     },
     "devDependencies": {
@@ -36,6 +36,7 @@
         "cors": "^2.8.5",
         "dotenv": "^10.0.0",
         "express": "^4.17.1",
-        "node-fetch": "^2.6.1"
+        "node-fetch": "^2.6.1",
+        "stream": "0.0.2"
     }
 }

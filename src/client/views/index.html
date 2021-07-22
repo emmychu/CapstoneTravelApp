@@ -14,8 +14,9 @@
             </header>
                 <div id = "info-submit">
                     <div class ="questions">Where are you going?: <input type = "text" id = "first-destination" placeholder = "City"></div>
-                    <div class>If this city is in the US, please input the state abbreviation or your results will be less accurate!: <input type = "text" id="state" maxlength = "2" placeholder="State"></div>
-                    <div class = "questions"> What country is this city in? Please input the country code! (two letters): <input type = "text" id="country"maxlength = "2" placeholder = "Country Code"></div>
+                    <div class>If this city is in the US, please input the state abbreviation!: <br><center><input type = "text" id="state" maxlength = "2" placeholder="State"></center></div>
+                    <div class = "questions">Please input the country code! (two letters): <br><center><input type = "text" id="country"maxlength = "2" placeholder = "Country Code"></center></div>
+                    <p>Refer to this <a href ="http://www.geonames.org/export/free-geocoding.html" target="_blank">link</a> to view supported countries and its country code</p>
                     <div class ="questions">When are you leaving?: <input type = "date" id = "depart-date"><br></div>
                     <div class ="questions">When are you returning?: <input type = "date" id = "return-date"><br></div>
                     <input id = "submit-button" type ="submit" value = "Submit" onclick="return Client.submitForm(event)">
@@ -34,7 +35,7 @@
         </div>
         <footer>
                 <a id = "view-cal">Click here to view the calendar!</a>
-                <!-- Should have button to return to the beginning -->
+                <a id = "refresh">Click to start at the beginning!</a>
         </footer>
         <script>
             if ('serviceWorker' in navigator) {

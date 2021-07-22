@@ -18,7 +18,7 @@ alert("Please fill out the form and press submit! Thanks!");
 document.getElementById("view-cal").addEventListener("click", () => {Client.calendarView()})
 document.getElementById("next").addEventListener("click",() => {Client.nextActive()})
 document.getElementById("back").addEventListener("click",() => {Client.previousActive()})
-
+document.getElementById("refresh").addEventListener("click",() => window.location.reload())
 
 
 export {

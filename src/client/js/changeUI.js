@@ -15,6 +15,7 @@ function uiUpdate(destination,departDate,returnDate){
     document.getElementById("step-1").style.display = "none";
     let stepTwo =  document.getElementById("step-2")
     document.getElementById("view-cal").style.display = "flex";
+    document.getElementById("refresh").style.display = "flex";
     stepTwo.style.display = "flex";
     stepThree.style.display = "none";
     let calendarDiv = document.getElementById("calendar")
@@ -43,7 +44,16 @@ function uiUpdate(destination,departDate,returnDate){
     postData('http://localhost:8095/image', destination)
     .then((data) => {
         let total = data['hits'].length
-        document.getElementsByTagName("body")[0].style.backgroundImage = `url("${data['hits'][Math.floor(Math.random() * total)]['largeImageURL']}")`
+        if(total === 0){
+            postData('http://localhost:8095/image', [destination[1]])
+            .then((data) =>{
+                total = data['hits'].length
+                document.getElementsByTagName("body")[0].style.backgroundImage = `url("${data['hits'][Math.floor(Math.random() * total)]['largeImageURL']}")`
+            })
+        }else{
+            total = data['hits'].length
+            document.getElementsByTagName("body")[0].style.backgroundImage = `url("${data['hits'][Math.floor(Math.random() * total)]['largeImageURL']}")`
+        }
     })
     const now = new Date().getTime()
     const depart = new Date(`${departDate.month}/${departDate.day}/${departDate.year}`).getTime()
@@ -51,6 +61,7 @@ function uiUpdate(destination,departDate,returnDate){
     if(difference <= 16) {
         postData('http://localhost:8095/submission', destination)
         .then((data) => {
+            console.log(data)
             if(destination[2].length > 0){
                 let lat = data[9]
                 let lon = data[3]

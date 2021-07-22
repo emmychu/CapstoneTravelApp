@@ -23,10 +23,7 @@
 ## Extend Options:
 * Add end date and displayed length of trip
 * Forecast for multiple days
-
-## Notes
-* Refer to this [link] (http://www.geonames.org/export/free-geocoding.html) to view supported countries
-
+* Image pulled for country from pixabay if no results
 
 ## Credits to:
 * Calendar creation tutorial used from [here] (https://javascript.info/task/calendar-table)
