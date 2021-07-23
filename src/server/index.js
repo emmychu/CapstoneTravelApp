@@ -1,6 +1,6 @@
 
-const dotenv = require('dotenv');
-dotenv.config();
+// const dotenv = require('dotenv');
+// dotenv.config();
 
 var path = require('path')
 const fetch = require('node-fetch');
@@ -38,7 +38,7 @@ var textAPI = {
 }
 
 function getData(request, response){
-    getCoordinates(textAPI['geoUser'],request.body)
+    getCoordinates("moofiemonster",request.body)
     .then((data) =>{
         response.send(data)
     })
@@ -47,7 +47,7 @@ function getData(request, response){
 app.post('/image', getPic)
 
 function getPic(request, response){
-    getImage(textAPI['photoKey'],request.body)
+    getImage("22238697-c284ba5b1bd2156064c8f808e",request.body)
     .then((data) =>{
         response.send(data)
     })
@@ -56,7 +56,7 @@ function getPic(request, response){
 app.post('/weather', weatherAPI)
 
 function weatherAPI(request,response){
-    getWeather(textAPI['weatherKey'],request.body)
+    getWeather("da6552e214114d288d0d19870277f3a7",request.body)
     .then((data)=>{
         response.send(data)
     })

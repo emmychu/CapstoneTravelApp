@@ -61,7 +61,6 @@ function uiUpdate(destination,departDate,returnDate){
     if(difference <= 16) {
         postData('http://localhost:8095/submission', destination)
         .then((data) => {
-            console.log(data)
             if(destination[2].length > 0){
                 let lat = data[9]
                 let lon = data[3]
