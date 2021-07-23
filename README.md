@@ -37,3 +37,4 @@ The application accepts city, state(if located within US) and country. If not fo
 ## Credits to:
 * Calendar creation tutorial used from [here] (https://javascript.info/task/calendar-table)
 * Server test tutorial used from [here] (https://zellwk.com/blog/endpoint-testing/)
+* Back and forward icons borrowed from icons8.com
