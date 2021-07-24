@@ -1,8 +1,8 @@
 const fetch = require("node-fetch");
-
+const apiKey = "22238697-c284ba5b1bd2156064c8f808e";
 const base = "https://pixabay.com/api/?key="
 //Searches for images based on user inputted desination
-const getImage = async(apiKey,destination) => {
+const getImage = async(destination) => {
     let preSearch = destination[0].split(" ")
     let searchTerm = ""
     if(preSearch.length > 1){
@@ -14,7 +14,6 @@ const getImage = async(apiKey,destination) => {
     
     }
     let url = base + apiKey + "&q=" + searchTerm +"&image_type=photo&category=places"
-    console.log(url)
     let response = await fetch(url,{
         method: 'GET',
         headers:{'Content-Type':'application/json'}

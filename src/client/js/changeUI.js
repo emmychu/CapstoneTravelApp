@@ -5,8 +5,8 @@ import {postData} from '../js/postData'
 import { addWeather } from './weatherData'
 
 //Global variables
-let stepThree =  document.getElementById("step-3")
-let viewCal = document.getElementById('view-cal')
+let stepThree =  document.getElementById("step-3");
+let viewCal = document.getElementById('view-cal');
 
 //Several functions that work to change the UI\
 
@@ -18,11 +18,11 @@ function uiUpdate(destination,departDate,returnDate){
     document.getElementById("refresh").style.display = "flex";
     stepTwo.style.display = "flex";
     stepThree.style.display = "none";
-    let calendarDiv = document.getElementById("calendar")
-    let currentMonth = departDate.month
-    let currentYear = departDate.year
-    let returnYear = returnDate.year
-    let returnMonth = returnDate.month 
+    let calendarDiv = document.getElementById("calendar");
+    let currentMonth = departDate.month;
+    let currentYear = departDate.year;
+    let returnYear = returnDate.year;
+    let returnMonth = returnDate.month;
     tripSummary(destination[0],departDate,returnDate)
     document.getElementById("destination").innerText = destination[0]
     calendarDiv.insertAdjacentHTML("afterbegin",(Client.calendarCreate(currentYear, currentMonth)))

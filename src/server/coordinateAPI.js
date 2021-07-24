@@ -1,8 +1,9 @@
 const fetch = require("node-fetch");
+const username = "moofiemonster";
+const base = "http://api.geonames.org/postalCodeSearchJSON?placename=";
 
-const base = "http://api.geonames.org/postalCodeSearchJSON?placename="
 //Retrieves the coordinates from Geonames
-const getCoordinates = async(username, destination) => {
+const getCoordinates = async(destination) => {
     const url = base + destination[0]+ `&country=`+ destination[1] + `&username=${username}&maxRows=10`
     let response = await fetch(url,{
         method: 'GET',

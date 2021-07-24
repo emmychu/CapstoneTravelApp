@@ -1,6 +1,7 @@
 # FEND Capstone Travel App
 
 ## Installation
+* `npm install`
 * `npm i node`
 * `npm i express`
 * `npm i cors`

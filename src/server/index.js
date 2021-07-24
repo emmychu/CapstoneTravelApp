@@ -31,14 +31,14 @@ app.listen(8095, () => {
 
 app.post('/submission', getData);
 
-var textAPI = {
-    geoUser: process.env.GEO_USER,
-    photoKey: process.env.API_KEY_PIX,
-    weatherKey: process.env.API_KEY_WEATHER
-}
+// var textAPI = {
+//     geoUser: process.env.GEO_USER,
+//     photoKey: process.env.API_KEY_PIX,
+//     weatherKey: process.env.API_KEY_WEATHER
+// }
 
 function getData(request, response){
-    getCoordinates("moofiemonster",request.body)
+    getCoordinates(request.body)
     .then((data) =>{
         response.send(data)
     })
@@ -47,7 +47,7 @@ function getData(request, response){
 app.post('/image', getPic)
 
 function getPic(request, response){
-    getImage("22238697-c284ba5b1bd2156064c8f808e",request.body)
+    getImage(request.body)
     .then((data) =>{
         response.send(data)
     })
@@ -56,7 +56,7 @@ function getPic(request, response){
 app.post('/weather', weatherAPI)
 
 function weatherAPI(request,response){
-    getWeather("da6552e214114d288d0d19870277f3a7",request.body)
+    getWeather(request.body)
     .then((data)=>{
         response.send(data)
     })
