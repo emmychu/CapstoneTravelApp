@@ -2,7 +2,6 @@
 
 ## Installation
 * `npm install`
-* `npm i node`
 * `npm i express`
 * `npm i cors`
 * `npm i body-parser`
@@ -16,7 +15,6 @@
 * `npm i -D mini-css-extract-plugin`
 * `npm i -D optimize-css-assets-webpack-plugin terser-webpack-plugin`
 * `npm i node-fetch`
-* `npm i dotenv`
 * `npm i workbox-webpack-plugin`
 * `npm i jest --save-dev`
 * `npm i supertest --save-dev`
