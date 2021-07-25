@@ -1,7 +1,3 @@
-
-// const dotenv = require('dotenv');
-// dotenv.config();
-
 var path = require('path')
 const fetch = require('node-fetch');
 const express = require('express')
@@ -30,12 +26,6 @@ app.listen(8095, () => {
 })
 
 app.post('/submission', getData);
-
-// var textAPI = {
-//     geoUser: process.env.GEO_USER,
-//     photoKey: process.env.API_KEY_PIX,
-//     weatherKey: process.env.API_KEY_WEATHER
-// }
 
 function getData(request, response){
     getCoordinates(request.body)
