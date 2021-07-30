@@ -23,7 +23,7 @@ function uiUpdate(destination,departDate,returnDate){
     let currentYear = departDate.year;
     let returnYear = returnDate.year;
     let returnMonth = returnDate.month;
-    tripSummary(destination[0],departDate,returnDate)
+    Client.tripSummary(destination[0],departDate,returnDate)
     document.getElementById("destination").innerText = destination[0]
     calendarDiv.insertAdjacentHTML("afterbegin",(Client.calendarCreate(currentYear, currentMonth)))
     document.getElementById(`${currentMonth}-${currentYear}`).className = 'active-calendar'
@@ -41,11 +41,11 @@ function uiUpdate(destination,departDate,returnDate){
         }
     }
     colorTrip(departDate,returnDate)
-    postData('http://localhost:8095/image', destination)
+    Client.postData('http://localhost:8095/image', destination)
     .then((data) => {
         let total = data['hits'].length
         if(total === 0){
-            postData('http://localhost:8095/image', [destination[1]])
+            Client.postData('http://localhost:8095/image', [destination[1]])
             .then((data) =>{
                 total = data['hits'].length
                 document.getElementsByTagName("body")[0].style.backgroundImage = `url("${data['hits'][Math.floor(Math.random() * total)]['largeImageURL']}")`
@@ -59,22 +59,22 @@ function uiUpdate(destination,departDate,returnDate){
     const depart = new Date(`${departDate.month}/${departDate.day}/${departDate.year}`).getTime()
     const difference = (depart - now)/(1000*60*60*24)
     if(difference <= 16) {
-        postData('http://localhost:8095/submission', destination)
+        Client.postData('http://localhost:8095/submission', destination)
         .then((data) => {
             if(destination[2].length > 0){
                 let lat = data[9]
                 let lon = data[3]
                 if(departDate)
-                postData('http://localhost:8095/weather',[lat,lon])
+                Client.postData('http://localhost:8095/weather',[lat,lon])
                 .then((data) =>{
-                    addWeather(data['data'])
+                    Client.addWeather(data['data'])
                 })
             }else{
                 let lat = data['postalCodes'][0]['lat']
                 let lon = data['postalCodes'][0]['lng']
-                postData('http://localhost:8095/weather',[lat,lon])
+                Client.postData('http://localhost:8095/weather',[lat,lon])
                 .then((data) =>{
-                    addWeather(data['data'])
+                    Client.addWeather(data['data'])
                 })
             }
         })
@@ -117,7 +117,7 @@ function getMonth(month){
 //This is a supplemental function to create the calendar for the following month
 function addMonth(position,currentMonth,endMonth,currentYear){
     for(currentMonth; currentMonth <= endMonth; currentMonth++){
-        position.insertAdjacentHTML('beforeend',calendarCreate(currentYear,currentMonth))
+        position.insertAdjacentHTML('beforeend',Client.calendarCreate(currentYear,currentMonth))
     }
 }
 

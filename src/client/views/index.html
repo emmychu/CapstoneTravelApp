@@ -22,11 +22,11 @@
                     <input id = "submit-button" type ="submit" value = "Submit" onclick="return Client.submitForm(event)">
                 </div>
         </div>
-        <div id ="step-2" class = "info">
+        <div id ="step-2" class = "info" style ="display: none">
             <!-- Background should reflect initial city -->
             <h1 id = "destination">Insert Destination Here</h1>
         </div>
-        <div id ="step-3" class = "info">
+        <div id ="step-3" class = "info" style ="display: none">
             <div id= "back" class = "cal"><img src="https://img.icons8.com/ultraviolet/40/000000/collapse-arrow.png"/></div>
             <h2 id = "month" class = "cal">Insert Month here</h2>
             <div id = "calendar" class = "cal">
@@ -34,8 +34,8 @@
             <div id="next" class = "cal"><img src="https://img.icons8.com/ultraviolet/40/000000/expand-arrow--v1.png" alt="next month"/></div>
         </div>
         <footer>
-                <a id = "view-cal">Click here to view the calendar!</a>
-                <a id = "refresh">Click to start at the beginning!</a>
+                <a id = "view-cal" style = "display:none"> Click here to view the calendar!</a>
+                <a id = "refresh" style = "display:none"> Click to start at the beginning!</a>
         </footer>
         <script>
             if ('serviceWorker' in navigator) {
