@@ -61,12 +61,14 @@ function uiUpdate(destination,departDate,returnDate){
     if(difference <= 16) {
         Client.postData('http://localhost:8095/submission', destination)
         .then((data) => {
+            console.log(data)
             if(destination[2].length > 0){
                 let lat = data[9]
                 let lon = data[3]
                 if(departDate)
                 Client.postData('http://localhost:8095/weather',[lat,lon])
                 .then((data) =>{
+                    console.log(data)
                     Client.addWeather(data['data'])
                 })
             }else{
@@ -74,6 +76,7 @@ function uiUpdate(destination,departDate,returnDate){
                 let lon = data['postalCodes'][0]['lng']
                 Client.postData('http://localhost:8095/weather',[lat,lon])
                 .then((data) =>{
+                    console.log(data)
                     Client.addWeather(data['data'])
                 })
             }

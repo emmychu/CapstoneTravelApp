@@ -6,7 +6,7 @@ function addWeather(data){
         let currentDay = dateObject(data[day]['datetime'])
         let dayCal = document.getElementById(`${currentDay["month"]}-${currentDay['day']}-${currentDay['year']}`)
         if(dayCal === null){
-            break
+            continue;
         }
         dayCal.insertAdjacentHTML("beforeend", `<p>High of ${data[day]['high_temp']}°C <br> Low of ${data[day]['low_temp']}°C <br> Weather: ${data[day]['weather']['description']} `)
     };
